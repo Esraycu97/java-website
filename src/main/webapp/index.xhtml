@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Informacion Provincial</title>
+        <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyC0uLuEN5YSxjAIxVBeiPOyXlWQlXLUFBg"></script>
+    </h:head>
+    <h:body >
+        <h3>San Salvador de Jujuy</h3>
+        <p:accordionPanel>
+            <p:tab title="Cabildo de Jujuy">
+                <div class="ui-g">
+                    <div class="ui-g-5">
+                        <p:imageCompare 
+                            rightImage="https://us.cdn.eltribuno.com/042016/1487156245098.jpg"
+                            leftImage="https://upload.wikimedia.org/wikipedia/commons/2/2e/Cabildo_de_San_Salvador_de_Jujuy_actualmente_museo_y_Dependencias_de_la_Policía_de_Jujuy.JPG"
+                            width="570" height="430"/>
+                    </div>
+                    <div class="ui-g-7">
+                        <h:outputText
+                            value="El día 19 de abril de 1593 Francisco de Argañaraz y Murgía fundó la ciudad de San Salvador de Velazco en el Valle de Jujuy. En el atardecer de la 
+                            fundación Argañaraz nombró a los integrantes del Cabildo: Pedro de Godoy y Lorenzo de Herrera asumieron el cargo de Alcaldes Ordinarios; Juan de Seguro, 
+                            Miguel García Valverde, Francisco Falcón y Marco Antonio asumieron como Regidores; Francisco de Benavente asumió como procurador general; Julián Núñez 
+                            Galván asumió el cargo de Mayordomo. A Juan de Seguro se le concedió por única vez dos cargos como Alguacil y Regidor durante los primeros 6 años del 
+                            nacimiento de la ciudad. En los primeros tiempos de la fundación los vecinos eran conquistadores, descubridores, pacificadores y pobladores; y de estos 
+                            se elegía al cabildante.
+                            Para ser cabildante, primero se debía ser vecino y debían poseer su residencia en los territorios del Cabildo, poseer un capital, saber leer y escribir, 
+                            y no poseer deuda a la corona y a particulares." />
+                    </div>
+                </div>
+                <div class="ui-g">
+                    <div class="ui-g-12">
+                        <p:gmap center="-24.1850968, -65.2999846" zoom="19" type="HYBRID" style="width:100%;height:250px" />
+                    </div>
+                </div>
+            </p:tab>
+            <p:tab title="Terminal ">     
+                <div class="ui-g">
+                    <div class="ui-g-5">
+                        <p:imageCompare 
+                            rightImage="https://media.todojujuy.com/adjuntos/227/imagenes/000/865/0000865146.jpg"
+                            leftImage="http://www.jujuyalmomento.com/upload/img/nota-1247421-remembranza-sobre-vieja-terminal-omnibus-583963_3913.jpg"
+                            width="570" height="430"/>
+                    </div>
+                    <div class="ui-g-7">
+                        <h:outputText
+                            value="El día 19 de abril de 1593 Francisco de Argañaraz y Murgía fundó la ciudad de San Salvador de Velazco en el Valle de Jujuy. En el atardecer de la 
+                            fundación Argañaraz nombró a los integrantes del Cabildo: Pedro de Godoy y Lorenzo de Herrera asumieron el cargo de Alcaldes Ordinarios; Juan de Seguro, 
+                            Miguel García Valverde, Francisco Falcón y Marco Antonio asumieron como Regidores; Francisco de Benavente asumió como procurador general; Julián Núñez 
+                            Galván asumió el cargo de Mayordomo. A Juan de Seguro se le concedió por única vez dos cargos como Alguacil y Regidor durante los primeros 6 años del 
+                            nacimiento de la ciudad. En los primeros tiempos de la fundación los vecinos eran conquistadores, descubridores, pacificadores y pobladores; y de estos 
+                            se elegía al cabildante.
+                            Para ser cabildante, primero se debía ser vecino y debían poseer su residencia en los territorios del Cabildo, poseer un capital, saber leer y escribir, 
+                            y no poseer deuda a la corona y a particulares." />
+                    </div>
+                </div>
+                <div class="ui-g">
+                    <div class="ui-g-12">
+                        <p:gmap center="-24.1923412, -65.3029888" zoom="19" type="HYBRID" style="width:100%;height:250px" />
+                    </div>
+                </div>
+            </p:tab>
+        </p:accordionPanel>
+    </h:body>
+</html>
