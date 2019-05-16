@@ -28,7 +28,14 @@
         <!-- Webapp Runner -->
 	<webapp-runner.version>9.0.13.0</webapp-runner.version>
     </properties>
-    
+    <repositories>
+        <repository>
+            <id>prime-repo</id>
+            <name>PrimeFaces Maven Repository</name>
+            <url>http://repository.primefaces.org</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
     <dependencies>
         <dependency>
             <groupId>org.glassfish</groupId>
@@ -50,7 +57,13 @@
             <groupId>com.github.jsimone</groupId>
             <artifactId>webapp-runner-main</artifactId>
             <version>${webapp-runner.version}</version>
-          </dependency>
+        </dependency>
+          <!-- https://mvnrepository.com/artifact/org.primefaces.themes/all-themes -->
+        <dependency>
+            <groupId>org.primefaces.themes</groupId>
+            <artifactId>all-themes</artifactId>
+            <version>1.0.10</version>
+        </dependency>
     </dependencies>
 
     <build>
