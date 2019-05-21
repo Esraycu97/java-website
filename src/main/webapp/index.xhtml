@@ -2,9 +2,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Informacion Provincial</title>
+        <style type="text/css">
+            .detail {
+                width: 95%;
+                padding-left: 25px;
+            }
+
+            .detail td {
+                font-size: 24px;
+            }
+        </style>
         <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyAacRMS4WTlQmrXyBJmD-2R0oktFugiXI0"></script>
     </h:head>
     <h:body style="margin:0 auto!important; " >
@@ -31,13 +42,13 @@
         <p:accordionPanel>
             <p:tab title="Cabildo de Jujuy">
                 <div class="ui-g">
-                    <div class="ui-g-5">
+                    <div class="ui-g-12 ui-md-12 ui-lg-4" style="display: inherit;">
                         <p:imageCompare 
                             rightImage="https://us.cdn.eltribuno.com/042016/1487156245098.jpg"
                             leftImage="https://upload.wikimedia.org/wikipedia/commons/2/2e/Cabildo_de_San_Salvador_de_Jujuy_actualmente_museo_y_Dependencias_de_la_Policía_de_Jujuy.JPG"
-                            width="570" height="430"/>
+                            width="570" height="430" />
                     </div>
-                    <div class="ui-g-7">
+                    <div class="ui-g-12 ui-md-12 ui-lg-8">
                         <h:outputText
                             value="El día 19 de abril de 1593 Francisco de Argañaraz y Murgía fundó la ciudad de San Salvador de Velazco en el Valle de Jujuy. En el atardecer de la 
                             fundación Argañaraz nombró a los integrantes del Cabildo: Pedro de Godoy y Lorenzo de Herrera asumieron el cargo de Alcaldes Ordinarios; Juan de Seguro, 
@@ -50,28 +61,35 @@
                     </div>
                 </div>
                 <div class="ui-g">
-                    <div class="ui-g-12">
+                    <div class="ui-g-12 ui-lg-6">
                         <p:gmap center="-24.1850968, -65.2999846" zoom="19" type="HYBRID" style="width:100%;height:250px" />
                     </div>
-                </div>
-                <p:dataTable id="tableMult" value="#{celularFormBeans.table}" var="item">
-                            <p:column headerText="Multiplicacion">
-                                <h:outputText value="#{item.valor}" />
-                            </p:column>
-                            <p:column headerText="Resultado">
-                                <h:outputText value="#{item.valorMultiplicado}" />
-                            </p:column>
-                </p:dataTable> 
+                    <div class="ui-g-12 ui-lg-6">
+                        <p:repeat value="#{indexInfoBean.fillCabildo()}" var="data">
+                            <h:panelGrid columns="1" style="width:100%" columnClasses="detail">
+                                <p:outputPanel>
+                                    <h:panelGrid columns="2" cellpadding="5">
+                                        <h:outputText value="Fecha de Fundación: " />
+                                        <h:outputText value="#{data.fechaFundacion}" style="font-weight: bold"/>
+
+                                        <h:outputText value="Ubicación:" />
+                                        <h:outputText value="#{data.ubicacion}" style="font-weight: bold"/>
+                                    </h:panelGrid>
+                                </p:outputPanel>
+                            </h:panelGrid>
+                        </p:repeat>
+                    </div>
+                </div>   
             </p:tab>
             <p:tab title="Casa de Gobierno de San Salvador de Jujuy">     
                 <div class="ui-g">
-                    <div class="ui-g-5">
+                    <div class="ui-g-12 ui-md-12 ui-lg-4" style="display: inherit;">
                         <p:imageCompare 
                             rightImage="https://media-cdn.tripadvisor.com/media/photo-s/03/00/cb/16/casa-de-gobierno-de-jujuy.jpg"
                             leftImage="https://farm8.static.flickr.com/7137/6878166706_8ddaa1a67b_b.jpg"
                             width="570" height="430"/>
                     </div>
-                    <div class="ui-g-7">
+                    <div class="ui-g-12 ui-md-12 ui-lg-8">
                         <h:outputText
                             value="El Palacio de Gobierno de Jujuy es la sede del Gobierno de la Provincia de Jujuy. Se encuentra en la ciudad capital, San Salvador de Jujuy y fue 
                                    inaugurado en 1921. La anterior Casa de Gobierno provincial se encontraba situado en la esquina de Necochea y Alvear, edificio que actualmente es 
@@ -90,10 +108,26 @@
                     </div>
                 </div>
                 <div class="ui-g">
-                    <div class="ui-g-12">
+                    <div class="ui-g-6">
                         <p:gmap center="-24.1866541, -65.2994567" zoom="19" type="HYBRID" style="width:100%;height:250px" />
                     </div>
+                    <div class="ui-g-6">
+                        <p:repeat value="#{indexInfoBean.fillCasaGobierno()}" var="data">
+                            <h:panelGrid columns="1" style="width:100%" columnClasses="detail">
+                                <p:outputPanel>
+                                    <h:panelGrid columns="2" cellpadding="5">
+                                        <h:outputText value="Fecha de Fundación: " />
+                                        <h:outputText value="#{data.fechaFundacion}" style="font-weight: bold"/>
+
+                                        <h:outputText value="Ubicación:" />
+                                        <h:outputText value="#{data.ubicacion}" style="font-weight: bold"/>
+                                    </h:panelGrid>
+                                </p:outputPanel>
+                            </h:panelGrid>
+                        </p:repeat>
+                    </div>
                 </div>
+                
             </p:tab>
         </p:accordionPanel>
     </h:body>
