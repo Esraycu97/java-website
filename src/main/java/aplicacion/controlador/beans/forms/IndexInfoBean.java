@@ -24,14 +24,14 @@ public class IndexInfoBean {
 
     public List<Object> fillCabildo() {
         List<Object> list = new ArrayList<>();
-        list.add(new Place("18 de diciembre de 1837","MADRID 1000"));
+        list.add(new Place("17 de Abril de 1593","Gral. Belgrano 493, San Salvador de Jujuy"));
         setCabildo(list);
         return getCabildo();
     }
     
     public List<Object> fillCasaGobierno() {
         List<Object> list = new ArrayList<>();
-        list.add(new Place("19 de octubre de 1954","San Martin 100"));
+        list.add(new Place("10 de noviembre de 1921","San Martin 450, San Salvador de Jujuy"));
         setCasaGobierno(list);
         return getCasaGobierno();
     }
