@@ -22,13 +22,20 @@ public class IndexInfoBean {
     private List<Object> cabildo;
     private List<Object> casaGobierno;
 
+    /**
+     *  Llena los campos del objeto de tipo Place, en este caso el cabildo.
+     * @return 
+     */
     public List<Object> fillCabildo() {
         List<Object> list = new ArrayList<>();
         list.add(new Place("17 de Abril de 1593","Gral. Belgrano 493, San Salvador de Jujuy"));
         setCabildo(list);
         return getCabildo();
     }
-    
+    /**
+     * Llena los campos del objeto de tipo Place, en este caso la casa de gobierno.
+     * @return 
+     */
     public List<Object> fillCasaGobierno() {
         List<Object> list = new ArrayList<>();
         list.add(new Place("10 de noviembre de 1921","San Martin 450, San Salvador de Jujuy"));

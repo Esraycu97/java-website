@@ -12,12 +12,17 @@ package aplicacion.modelo.dominio;
 public class Place {
     private String fechaFundacion;
     private String ubicacion;
-    
+    /**
+     * Constructor del objeto Place que se usa para guardar los datos en forma general para lugares historicos.
+     * @param fechaFundacion
+     * @param ubicacion 
+     */
     public Place(String fechaFundacion, String ubicacion) {
         this.fechaFundacion = fechaFundacion;
         this.ubicacion = ubicacion;
     }
 
+    //----Getters y Setters
     /**
      * @return the fechaFundacion
      */
